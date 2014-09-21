@@ -38,5 +38,6 @@ names(dataset)[ncol(dataset)] <- "activity"
 library(plyr)
 dataset.summarize <- ddply(dataset, .(subject,activity), numcolwise(mean))
 
-
+#output to txt
+write.table(dataset.summarize,"dataset.txt", col.names = FALSE, row.names = FALSE)
 
